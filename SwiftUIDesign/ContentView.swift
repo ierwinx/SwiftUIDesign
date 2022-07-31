@@ -15,9 +15,17 @@ struct ContentView: View {
             }
             
             
-            Image("Cheems").resizable().aspectRatio(contentMode: .fit).frame(width: 150, height: 150, alignment: .center).clipShape(Circle())
+            Image("Cheems")
+                .resizable()
+                .scaledToFill()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: 150, height: 150, alignment: .center)
+                .clipShape(Circle())
                 .overlay(Circle().stroke(Color.green, lineWidth: 2))
                 .shadow(color: .black, radius: 20, x: 10, y: 10)
+                .overlay(Text("Chems")
+                        .foregroundColor(.white)
+                        .font(.title), alignment: .top)
             
             HStack {
                 Text("Swiwt UI").padding().font(.title).foregroundColor(.white).background(.green)
